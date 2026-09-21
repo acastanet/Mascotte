@@ -60,24 +60,26 @@
     width: min(760px, 92vw);
   }
 
-  .logo-container {
-    position: relative;
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
     width: 100%;
-    margin: 0 auto;
   }
 
-  .logo-container svg {
+  .mascot-container {
+    width: min(400px, 80vw);
+  }
+
+  .logo-container {
+    width: 100%;
+  }
+
+  svg {
     width: 100%;
     height: auto;
     display: block;
-  }
-
-  .mascot-overlay {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%) scale(0.4);
-    pointer-events: none;
   }
 
   .fill {
@@ -111,36 +113,39 @@
 <body>
 <header>
   <h1>Mascotte animée</h1>
-  <p>La mascotte AnSu superposée et animée sur le logo</p>
+  <p>La mascotte AnSu au-dessus du logo</p>
   <a href="index.html" class="nav-link">← Retour à l'accueil</a>
 </header>
 
-<main class="mark" aria-label="Logo AnSu avec mascotte animée superposée">
-  <div class="logo-container">
-    <svg id="ansu" viewBox="0 0 848.78 694.32" role="img" aria-labelledby="title desc">
-      <title id="title">AnSu avec mascotte animée</title>
-      <desc id="desc">Logo AnSu dans un cartouche arrondi avec mascotte minimaliste animée superposée.</desc>
-
-      <!-- Cartouche logo -->
-      <g id="logo">
-        <g>
-          <path class="fill" d="M145.86,48.11c-51.37,0-93.43,42.06-93.43,93.43v142.9h38.47v-79.69h49.46v-38.47h-49.46v-24.73c0-30.58,24.38-54.96,54.96-54.96s54.96,24.38,54.96,54.96v142.9h38.47v-142.9c0-51.37-42.06-93.43-93.43-93.43Z"/>
-          <path class="fill" d="M337.77,94.83c-46.82,0-85.19,38.37-85.19,85.19v104.43h38.47v-104.43c0-26.03,20.69-46.72,46.72-46.72s46.72,20.69,46.72,46.72v104.43h38.47v-104.43c0-46.82-38.37-85.19-85.19-85.19Z"/>
-          <path class="fill" d="M492.57,48.11c-37.71,0-68.7,30.99-68.7,68.7s30.99,68.7,68.7,68.7h52.21c16.92,0,30.23,13.31,30.23,30.23s-13.31,30.23-30.23,30.23h-101.68v38.47h101.68c37.71,0,68.7-30.99,68.7-68.7s-30.99-68.7-68.7-68.7h-52.21c-16.92,0-30.23-13.31-30.23-30.23s13.31-30.23,30.23-30.23h101.68v-38.47h-101.68Z"/>
-          <path class="fill" d="M624.02,94.83v104.43c0,46.82,38.37,85.19,85.19,85.19s85.19-38.37,85.19-85.19v-104.43h-38.47v104.43c0,26.03-20.69,46.72-46.72,46.72s-46.72-20.69-46.72-46.72v-104.43h-38.47Z"/>
+<main class="mark" aria-label="Mascotte animée au-dessus du logo AnSu">
+  <div class="content-container">
+    <!-- Mascotte animée en haut -->
+    <div class="mascot-container">
+      <svg id="mascot-svg" viewBox="0 0 848.78 694.32" role="img" aria-label="Mascotte animée">
+        <g id="mascot">
+          <rect class="frame" x="3.46" y="363.25" width="843.83" height="329.56" rx="28.79" ry="28.79"/>
+          <rect id="eye-left" class="eye" x="329" y="498" width="25" height="60" rx="12.5"/>
+          <rect id="eye-right" class="eye" x="495" y="498" width="25" height="60" rx="12.5"/>
         </g>
-        <rect class="frame" x="1.5" y="1.5" width="843.83" height="329.56" rx="28.79" ry="28.79"/>
-      </g>
-    </svg>
+      </svg>
+    </div>
 
-    <!-- Mascotte superposée et animée -->
-    <svg class="mascot-overlay" viewBox="0 0 848.78 694.32" role="img" aria-label="Mascotte animée">
-      <g id="mascot">
-        <rect class="frame" x="3.46" y="363.25" width="843.83" height="329.56" rx="28.79" ry="28.79"/>
-        <rect id="eye-left" class="eye" x="329" y="498" width="25" height="60" rx="12.5"/>
-        <rect id="eye-right" class="eye" x="495" y="498" width="25" height="60" rx="12.5"/>
-      </g>
-    </svg>
+    <!-- Logo en dessous -->
+    <div class="logo-container">
+      <svg id="ansu" viewBox="0 0 848.78 694.32" role="img" aria-labelledby="title desc">
+        <title id="title">AnSu</title>
+        <desc id="desc">Logo AnSu dans un cartouche arrondi.</desc>
+        <g id="logo">
+          <g>
+            <path class="fill" d="M145.86,48.11c-51.37,0-93.43,42.06-93.43,93.43v142.9h38.47v-79.69h49.46v-38.47h-49.46v-24.73c0-30.58,24.38-54.96,54.96-54.96s54.96,24.38,54.96,54.96v142.9h38.47v-142.9c0-51.37-42.06-93.43-93.43-93.43Z"/>
+            <path class="fill" d="M337.77,94.83c-46.82,0-85.19,38.37-85.19,85.19v104.43h38.47v-104.43c0-26.03,20.69-46.72,46.72-46.72s46.72,20.69,46.72,46.72v104.43h38.47v-104.43c0-46.82-38.37-85.19-85.19-85.19Z"/>
+            <path class="fill" d="M492.57,48.11c-37.71,0-68.7,30.99-68.7,68.7s30.99,68.7,68.7,68.7h52.21c16.92,0,30.23,13.31,30.23,30.23s-13.31,30.23-30.23,30.23h-101.68v38.47h101.68c37.71,0,68.7-30.99,68.7-68.7s-30.99-68.7-68.7-68.7h-52.21c-16.92,0-30.23-13.31-30.23-30.23s13.31-30.23,30.23-30.23h101.68v-38.47h-101.68Z"/>
+            <path class="fill" d="M624.02,94.83v104.43c0,46.82,38.37,85.19,85.19,85.19s85.19-38.37,85.19-85.19v-104.43h-38.47v104.43c0,26.03-20.69,46.72-46.72,46.72s-46.72-20.69-46.72-46.72v-104.43h-38.47Z"/>
+          </g>
+          <rect class="frame" x="1.5" y="1.5" width="843.83" height="329.56" rx="28.79" ry="28.79"/>
+        </g>
+      </svg>
+    </div>
   </div>
 </main>
 
