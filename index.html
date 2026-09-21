@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AnSu — logo et mascotte animée</title>
+<style>
+  :root {
+    --ansu: #1019a8;
+    --paper: #ffffff;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    min-height: 100%;
+    background: var(--paper);
+  }
+
+  body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: clamp(18px, 4vw, 48px);
+  }
+
+  .mark {
+    width: min(760px, 92vw);
+  }
+
+  svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: visible;
+  }
+
+  .fill {
+    fill: var(--ansu);
+  }
+
+  .frame {
+    fill: none;
+    stroke: var(--ansu);
+    stroke-width: 3;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .mascot {
+    transform-box: view-box;
+    transform-origin: 424.39px 528.03px;
+    transition: transform 420ms cubic-bezier(.22,.75,.25,1);
+  }
+
+  .eye {
+    fill: var(--ansu);
+    transform-box: fill-box;
+    transform-origin: center;
+    transition:
+      transform 320ms cubic-bezier(.22,.75,.25,1),
+      x 320ms cubic-bezier(.22,.75,.25,1),
+      y 320ms cubic-bezier(.22,.75,.25,1),
+      width 220ms ease,
+      height 220ms ease;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mascot, .eye { transition: none; }
+  }
+</style>
+</head>
+<body>
+<main class="mark" aria-label="Logo AnSu et mascotte animée">
+  <svg id="ansu" viewBox="0 0 848.78 694.32" role="img" aria-labelledby="title desc">
+    <title id="title">AnSu</title>
+    <desc id="desc">Logo AnSu dans un cartouche arrondi et mascotte minimaliste animée dans un second cartouche.</desc>
+
+    <!-- Cartouche logo : géométrie reprise du gabarit fourni -->
+    <g id="logo">
+      <g>
+        <path id="lettre-a" class="fill" d="M145.86,48.11c-51.37,0-93.43,42.06-93.43,93.43v142.9h38.47v-79.69h49.46v-38.47h-49.46v-24.73c0-30.58,24.38-54.96,54.96-54.96s54.96,24.38,54.96,54.96v142.9h38.47v-142.9c0-51.37-42.06-93.43-93.43-93.43Z"/>
+        <path id="lettre-n" class="fill" d="M337.77,94.83c-46.82,0-85.19,38.37-85.19,85.19v104.43h38.47v-104.43c0-26.03,20.69-46.72,46.72-46.72s46.72,20.69,46.72,46.72v104.43h38.47v-104.43c0-46.82-38.37-85.19-85.19-85.19Z"/>
+        <path id="lettre-s" class="fill" d="M492.57,48.11c-37.71,0-68.7,30.99-68.7,68.7s30.99,68.7,68.7,68.7h52.21c16.92,0,30.23,13.31,30.23,30.23s-13.31,30.23-30.23,30.23h-101.68v38.47h101.68c37.71,0,68.7-30.99,68.7-68.7s-30.99-68.7-68.7-68.7h-52.21c-16.92,0-30.23-13.31-30.23-30.23s13.31-30.23,30.23-30.23h101.68v-38.47h-101.68Z"/>
+        <path id="lettre-u" class="fill" d="M624.02,94.83v104.43c0,46.82,38.37,85.19,85.19,85.19s85.19-38.37,85.19-85.19v-104.43h-38.47v104.43c0,26.03-20.69,46.72-46.72,46.72s-46.72-20.69-46.72-46.72v-104.43h-38.47Z"/>
+      </g>
+      <rect class="frame" x="1.5" y="1.5" width="843.83" height="329.56" rx="28.79" ry="28.79"/>
+    </g>
+
+    <!-- Mascotte : le second cartouche du gabarit devient le visage -->
+    <g id="mascot" class="mascot">
+      <rect class="frame" x="3.46" y="363.25" width="843.83" height="329.56" rx="28.79" ry="28.79"/>
+
+      <!-- Yeux bâtonnets -->
+      <rect id="eye-left" class="eye" x="329" y="498" width="25" height="60" rx="12.5"/>
+      <rect id="eye-right" class="eye" x="495" y="498" width="25" height="60" rx="12.5"/>
+    </g>
+  </svg>
+</main>
+
+<script>
+(() => {
+  const mascot = document.getElementById('mascot');
+  const left = document.getElementById('eye-left');
+  const right = document.getElementById('eye-right');
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const base = {
+    left:  { x: 329, y: 498, w: 25, h: 60 },
+    right: { x: 495, y: 498, w: 25, h: 60 }
+  };
+
+  const states = [
+    { name: 'neutre',   dx: 0,   dy: 0,  rotL: 0,   rotR: 0,  faceX: 0,  faceY: 0 },
+    { name: 'droite',   dx: 18,  dy: 0,  rotL: 0,   rotR: 0,  faceX: 3,  faceY: 0 },
+    { name: 'gauche',   dx: -18, dy: 0,  rotL: 0,   rotR: 0,  faceX: -3, faceY: 0 },
+    { name: 'curieux',  dx: 0,   dy: -8, rotL: -10, rotR: 10, faceX: 0,  faceY: -2 },
+    { name: 'souriant', dx: 0,   dy: 7,  rotL: 12,  rotR: -12,faceX: 0,  faceY: 2 }
+  ];
+
+  function setEye(el, b, s, rot) {
+    el.setAttribute('x', b.x + s.dx);
+    el.setAttribute('y', b.y + s.dy);
+    el.setAttribute('width', b.w);
+    el.setAttribute('height', b.h);
+    el.style.transform = `rotate(${rot}deg)`;
+  }
+
+  function showState(s) {
+    setEye(left, base.left, s, s.rotL);
+    setEye(right, base.right, s, s.rotR);
+    mascot.style.transform = `translate(${s.faceX}px, ${s.faceY}px)`;
+  }
+
+  function blink() {
+    if (reducedMotion) return;
+    const currentL = Number(left.getAttribute('y'));
+    const currentR = Number(right.getAttribute('y'));
+    left.setAttribute('y', currentL + 24);
+    right.setAttribute('y', currentR + 24);
+    left.setAttribute('height', 12);
+    right.setAttribute('height', 12);
+
+    setTimeout(() => {
+      left.setAttribute('y', currentL);
+      right.setAttribute('y', currentR);
+      left.setAttribute('height', 60);
+      right.setAttribute('height', 60);
+    }, 145);
+  }
+
+  if (reducedMotion) {
+    showState(states[0]);
+    return;
+  }
+
+  let index = 0;
+  showState(states[index]);
+
+  setInterval(() => {
+    index = (index + 1) % states.length;
+    showState(states[index]);
+  }, 2400);
+
+  setInterval(() => {
+    if (Math.random() > 0.35) blink();
+  }, 3100);
+})();
+</script>
+</body>
+</html>
