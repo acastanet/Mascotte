@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AnSu — Variantes de la mascotte</title>
+<style>
+  :root {
+    --ansu: #1019a8;
+    --paper: #ffffff;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    min-height: 100%;
+    background: var(--paper);
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: clamp(18px, 4vw, 48px);
+    font-family: system-ui, sans-serif;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  header h1 {
+    color: var(--ansu);
+    margin: 0 0 0.5rem 0;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  header p {
+    color: #333;
+    margin: 0;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+  }
+
+  .nav-link {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: var(--ansu);
+    text-decoration: none;
+    font-size: 1rem;
+  }
+
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+
+  .mark {
+    width: min(760px, 92vw);
+  }
+
+  svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: visible;
+  }
+
+  .fill {
+    fill: var(--ansu);
+  }
+
+  .frame {
+    fill: none;
+    stroke: var(--ansu);
+    stroke-width: 3;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .eye {
+    fill: var(--ansu);
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  .variants-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  .variant-card {
+    border: 2px solid var(--ansu);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .variant-card h2 {
+    color: var(--ansu);
+    margin: 0 0 1rem 0;
+    font-size: 1.3rem;
+  }
+
+  .variant-svg {
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Variantes de la mascotte AnSu</h1>
+  <p>Découvrez les différentes expressions de notre mascotte</p>
+  <a href="index.html" class="nav-link">← Retour à l'accueil</a>
+</header>
+
+<main class="mark" aria-label="Variantes de la mascotte AnSu">
+  <div class="variants-grid">
+    <!-- Variante Neutre -->
+    <div class="variant-card">
+      <h2>Neutre</h2>
+      <svg class="variant-svg" viewBox="0 0 848.78 694.32" role="img" aria-label="Mascotte neutre">
+        <g id="logo">
+          <g>
+            <path class="fill" d="M145.86,48.11c-51.37,0-93.43,42.06-93.43,93.43v142.9h38.47v-79.69h49.46v-38.47h-49.46v-24.73c0-30.58,24.38-54.96,54.96-54.96s54.96,24.38,54.96,54.96v142.9h38.47v-142.9c0-51.37-42.06-93.43-93.43-93.43Z"/>
+            <path class="fill" d="M337.77,94.83c-46.82,0-85.19,38.37-85.19,85.19v104.43h38.47v-104.43c0-26.03,20.69-46.72,46.72-46.72s46.72,20.69,46.72,46.72v104.43h38.47v-104.43c0-46.82-38.37-85.19-85.19-85.19Z"/>
+            <path class="fill" d="M492.57,48.11c-37.71,0-68.7,30.99-68.7,68.7s30.99,68.7,68.7,68.7h52.21c16.92,0,30.23,13.31,30.23,30.23s-13.31,30.23-30.23,30.23h-101.68v38.47h101.68c37.71,0,68.7-30.99,68.7-68.7s-30.99-68.7-68.7-68.7h-52.21c-16.92,0-30.23-13.31-30.23-30.23s13.31-30.23,30.23-30.23h101.68v-38.47h-101.68Z"/>
+            <path class="fill" d="M624.02,94.83v104.43c0,46.82,38.37,85.19,85.19,85.19s85.19-38.37,85.19-85.19v-104.43h-38.47v104.43c0,26.03-20.69,46.72-46.72,46.72s-46.72-20.69-46.72-46.72v-104.43h-38.47Z"/>
+          </g>
+          <rect class="frame" x="1.5" y="1.5" width="843.83" height="329.56" rx="28.79" ry="28.79"/>
+        </g>
+        <g>
+          <rect class="frame" x="3.46" y="363.25" width="843.83" height="329.56" rx="28.79" ry="28.79"/>
+          <rect class="eye" x="329" y="498" width="25" height="60" rx="12.5"/>
+          <rect class="eye" x="495" y="498" width="25" height="60" rx="12.5"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Variante Droite -->
+    <div class="variant-card">
+      <h2>Regarde à droite</h2>
+      <svg class="variant-svg" viewBox="0 0 848.78 694.32" role="img" aria-label="Mascotte regarde à droite">
+        <g id="logo">
+          <g>
+            <path class="fill" d="M145.86,48.11c-51.37,0-93.43,42.06-93.43,93.43v142.9h38.47v-79.69h49.46v-38.47h-49.46v-24.73c0-30.58,24.38-54.96,54.96-54.96s54.96,24.38,54.96,54.96v142.9h38.47v-142.9c0-51.37-42.06-93.43-93.43-93.43Z"/>
+            <path class="fill" d="M337.77,94.83c-46.82,0-85.19,38.37-85.19,85.19v104.43h38.47v-104.43c0-26.03,20.69-46.72,46.72-46.72s46.72,20.69,46.72,46.72v104.43h38.47v-104.43c0-46.82-38.37-85.19-85.19-85.19Z"/>
+            <path class="fill" d="M492.57,48.11c-37.71,0-68.7,30.99-68.7,68.7s30.99,68.7,68.7,68.7h52.21c16.92,0,30.23,13.31,30.23,30.23s-13.31,30.23-30.23,30.23h-101.68v38.47h101.68c37.71,0,68.7-30.99,68.7-68.7s-30.99-68.7-68.7-68.7h-52.21c-16.92,0-30.23-13.31-30.23-30.23s13.31-30.23,30.23-30.23h101.68v-38.47h-101.68Z"/>
+            <path class="fill" d="M624.02,94.83v104.43c0,46.82,38.37,85.19,85.19,85.19s85.19-38.37,85.19-85.19v-104.43h-38.47v104.43c0,26.03-20.69,46.72-46.72,46.72s-46.72-20.69-46.72-46.72v-104.43h-38.47Z"/>
+          </g>
+          <rect class="frame" x="1.5" y="1.5" width="843.83" height="329.56" rx="28.79" ry="28.79"/>
+        </g>
+        <g transform="translate(3px, 0px)">
+          <rect class="frame" x="3.46" y="363.25" width="843.83" height="329.56" rx="28.79" ry="28.79"/>
+          <rect class="eye" x="347" y="498" width="25" height="60" rx="12.5"/>
+          <rect class="eye" x="513" y="498" width="25" height="60" rx="12.5"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Variante Gauche -->
+    <div class="variant-card">
+      <h2>Regarde à gauche</h2>
+      <svg class="variant-svg" viewBox="0 0 848.78 694.32" role="img" aria-label="Mascotte regarde à gauche">
+        <g id="logo">
+          <g>
+            <path class="fill" d="M145.86,48.11c-51.37,0-93.43,42.06-93.43,93.43v142.9h38.47v-79.69h49.46v-38.47h-49.46v-24.73c0-30.58,24.38-54.96,54.96-54.96s54.96,24.38,54.96,54.96v142.9h38.47v-142.9c0-51.37-42.06-93.43-93.43-93.43Z"/>
+            <path class="fill" d="M337.77,94.83c-46.82,0-85.19,38.37-85.19,85.19v104.43h38.47v-104.43c0-26.03,20.69-46.72,46.72-46.72s46.72,20.69,46.72,46.72v104.43h38.47v-104.43c0-46.82-38.37-85.19-85.19-85.19Z"/>
+            <path class="fill" d="M492.57,48.11c-37.71,0-68.7,30.99-68.7,68.7s30.99,68.7,68.7,68.7h52.21c16.92,0,30.23,13.31,30.23,30.23s-13.31,30.23-30.23,30.23h-101.68v38.47h101.68c37.71,0,68.7-30.99,68.7-68.7s-30.99-68.7-68.7-68.7h-52.21c-16.92,0-30.23-13.31-30.23-30.23s13.31-30.23,30.23-30.23h101.68v-38.47h-101.68Z"/>
+            <path class="fill" d="M624.02,94.83v104.43c0,46.82,38.37,85.19,85.19,85.19s85.19-38.37,85.19-85.19v-104.43h-38.47v104.43c0,26.03-20.69,46.72-46.72,46.72s-46.72-20.69-46.72-46.72v-104.43h-38.47Z"/>
+          </g>
+          <rect class="frame" x="1.5" y="1.5" width="843.83" height="329.56" rx="28.79" ry="28.79"/>
+        </g>
+        <g transform="translate(-3px, 0px)">
+          <rect class="frame" x="3.46" y="363.25" width="843.83" height="329.56" rx="28.79" ry="28.79"/>
+          <rect class="eye" x="311" y="498" width="25" height="60" rx="12.5"/>
+          <rect class="eye" x="477" y="498" width="25" height="60" rx="12.5"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Variante Curieux -->
+    <div class="variant-card">
+      <h2>Curieux</h2>
+      <svg class="variant-svg" viewBox="0 0 848.78 694.32" role="img" aria-label="Mascotte curieuse">
+        <g id="logo">
+          <g>
+            <path class="fill" d="M145.86,48.11c-51.37,0-93.43,42.06-93.43,93.43v142.9h38.47v-79.69h49.46v-38.47h-49.46v-24.73c0-30.58,24.38-54.96,54.96-54.96s54.96,24.38,54.96,54.96v142.9h38.47v-142.9c0-51.37-42.06-93.43-93.43-93.43Z"/>
+            <path class="fill" d="M337.77,94.83c-46.82,0-85.19,38.37-85.19,85.19v104.43h38.47v-104.43c0-26.03,20.69-46.72,46.72-46.72s46.72,20.69,46.72,46.72v104.43h38.47v-104.43c0-46.82-38.37-85.19-85.19-85.19Z"/>
+            <path class="fill" d="M492.57,48.11c-37.71,0-68.7,30.99-68.7,68.7s30.99,68.7,68.7,68.7h52.21c16.92,0,30.23,13.31,30.23,30.23s-13.31,30.23-30.23,30.23h-101.68v38.47h101.68c37.71,0,68.7-30.99,68.7-68.7s-30.99-68.7-68.7-68.7h-52.21c-16.92,0-30.23-13.31-30.23-30.23s13.31-30.23,30.23-30.23h101.68v-38.47h-101.68Z"/>
+            <path class="fill" d="M624.02,94.83v104.43c0,46.82,38.37,85.19,85.19,85.19s85.19-38.37,85.19-85.19v-104.43h-38.47v104.43c0,26.03-20.69,46.72-46.72,46.72s-46.72-20.69-46.72-46.72v-104.43h-38.47Z"/>
+          </g>
+          <rect class="frame" x="1.5" y="1.5" width="843.83" height="329.56" rx="28.79" ry="28.79"/>
+        </g>
+        <g transform="translate(0px, -2px)">
+          <rect class="frame" x="3.46" y="363.25" width="843.83" height="329.56" rx="28.79" ry="28.79"/>
+          <rect class="eye" x="329" y="490" width="25" height="60" rx="12.5" style="transform: rotate(-10deg)"/>
+          <rect class="eye" x="495" y="490" width="25" height="60" rx="12.5" style="transform: rotate(10deg)"/>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Variante Souriant -->
+    <div class="variant-card">
+      <h2>Souriant</h2>
+      <svg class="variant-svg" viewBox="0 0 848.78 694.32" role="img" aria-label="Mascotte souriante">
+        <g id="logo">
+          <g>
+            <path class="fill" d="M145.86,48.11c-51.37,0-93.43,42.06-93.43,93.43v142.9h38.47v-79.69h49.46v-38.47h-49.46v-24.73c0-30.58,24.38-54.96,54.96-54.96s54.96,24.38,54.96,54.96v142.9h38.47v-142.9c0-51.37-42.06-93.43-93.43-93.43Z"/>
+            <path class="fill" d="M337.77,94.83c-46.82,0-85.19,38.37-85.19,85.19v104.43h38.47v-104.43c0-26.03,20.69-46.72,46.72-46.72s46.72,20.69,46.72,46.72v104.43h38.47v-104.43c0-46.82-38.37-85.19-85.19-85.19Z"/>
+            <path class="fill" d="M492.57,48.11c-37.71,0-68.7,30.99-68.7,68.7s30.99,68.7,68.7,68.7h52.21c16.92,0,30.23,13.31,30.23,30.23s-13.31,30.23-30.23,30.23h-101.68v38.47h101.68c37.71,0,68.7-30.99,68.7-68.7s-30.99-68.7-68.7-68.7h-52.21c-16.92,0-30.23-13.31-30.23-30.23s13.31-30.23,30.23-30.23h101.68v-38.47h-101.68Z"/>
+            <path class="fill" d="M624.02,94.83v104.43c0,46.82,38.37,85.19,85.19,85.19s85.19-38.37,85.19-85.19v-104.43h-38.47v104.43c0,26.03-20.69,46.72-46.72,46.72s-46.72-20.69-46.72-46.72v-104.43h-38.47Z"/>
+          </g>
+          <rect class="frame" x="1.5" y="1.5" width="843.83" height="329.56" rx="28.79" ry="28.79"/>
+        </g>
+        <g transform="translate(0px, 2px)">
+          <rect class="frame" x="3.46" y="363.25" width="843.83" height="329.56" rx="28.79" ry="28.79"/>
+          <rect class="eye" x="329" y="505" width="25" height="60" rx="12.5" style="transform: rotate(12deg)"/>
+          <rect class="eye" x="495" y="505" width="25" height="60" rx="12.5" style="transform: rotate(-12deg)"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</main>
+</body>
+</html>
